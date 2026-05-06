@@ -1,0 +1,4 @@
+interface:
+  display_name: "Access Control Build Test Hygiene"
+  short_description: "Focused lint and test runbook for access-control UI"
+  default_prompt: "Use this skill to choose and run the minimum required validation checks."

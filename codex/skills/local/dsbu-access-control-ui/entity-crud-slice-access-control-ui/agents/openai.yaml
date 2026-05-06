@@ -1,0 +1,4 @@
+interface:
+  display_name: "Access Control Entity CRUD Slice"
+  short_description: "Angular CRUD slices with Groups/Roles patterns"
+  default_prompt: "Use this skill to add or update entity CRUD slices in dsbu-access-control-ui."
