@@ -1,0 +1,4 @@
+interface:
+  display_name: "Iterative Unit Tests"
+  short_description: "Unit-test backlog with util queue/state files"
+  default_prompt: "Use $iterative-unit-tests to build /codex/output/iterative_unit_tests_items.txt, sync /codex/output/iterative_unit_tests_items_status.txt, and implement one open test item at a time."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Util Iterative Flat File"
+  short_description: "Canonical /codex/output flat-file queue and status pattern"
+  default_prompt: "Use $util-iterative-flat-file to manage iterative files named /codex/output/<invoking_skill>_<use_for_skill>.txt with items and items_status defaults."

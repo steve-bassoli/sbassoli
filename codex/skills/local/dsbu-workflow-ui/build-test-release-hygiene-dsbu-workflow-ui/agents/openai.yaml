@@ -1,0 +1,4 @@
+interface:
+  display_name: "DSBU Workflow UI Build Test Release Hygiene"
+  short_description: "Focused lint, test, and BOM runbook for dsbu-workflow-ui"
+  default_prompt: "Use this skill to choose and run the minimum required validation and release checks."

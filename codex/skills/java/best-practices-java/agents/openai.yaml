@@ -1,0 +1,4 @@
+interface:
+  display_name: "Best Practices Java"
+  short_description: "Audit changed Java and Spring Boot files for high-value gaps"
+  default_prompt: "Use $best-practices-java to audit changed Java and Spring Boot files, write findings to /codex/output/best-practices-java.txt, maintain queue/status via util-iterative-flat-file files, and fix issues one by one."

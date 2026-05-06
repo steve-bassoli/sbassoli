@@ -1,0 +1,4 @@
+interface:
+  display_name: "Angular Guardrail Enforcer"
+  short_description: "Enforce Angular template, component, and lint guardrails"
+  default_prompt: "Use $guardrail-enforcer-angular to enforce Angular template, component, and lint guardrails for changed Angular app or library files."

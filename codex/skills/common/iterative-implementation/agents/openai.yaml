@@ -1,0 +1,4 @@
+interface:
+  display_name: "Iterative Implementation"
+  short_description: "Step execution with util queue/status files"
+  default_prompt: "Use $iterative-implementation to produce /codex/output/iterative_implementation_items.txt, sync /codex/output/iterative_implementation_items_status.txt, and execute one open step at a time."

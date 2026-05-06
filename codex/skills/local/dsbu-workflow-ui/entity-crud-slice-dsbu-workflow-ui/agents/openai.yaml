@@ -1,0 +1,4 @@
+interface:
+  display_name: "DSBU Workflow UI Entity CRUD Slice"
+  short_description: "Angular CRUD slices with Projects/Memberships patterns"
+  default_prompt: "Use this skill to add or update entity CRUD slices in dsbu-workflow-ui."

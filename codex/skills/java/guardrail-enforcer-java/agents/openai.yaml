@@ -1,0 +1,4 @@
+interface:
+  display_name: "Guardrail Enforcer Java"
+  short_description: "Enforce Java repo guardrails and compliance-sensitive hygiene"
+  default_prompt: "Use $guardrail-enforcer-java to enforce Spotless, Xlint, and SonarQube-sensitive guardrails for Java backend changes in the active repository."

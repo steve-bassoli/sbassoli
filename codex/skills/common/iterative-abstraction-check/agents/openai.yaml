@@ -1,0 +1,4 @@
+interface:
+  display_name: "Iterative Abstraction Check"
+  short_description: "Abstraction gate with util queue/status files"
+  default_prompt: "Use $iterative-abstraction-check to scan diffs, write /codex/output/iterative_abstraction_check_items.txt, sync /codex/output/iterative_abstraction_check_items_status.txt, and resolve one open item at a time."

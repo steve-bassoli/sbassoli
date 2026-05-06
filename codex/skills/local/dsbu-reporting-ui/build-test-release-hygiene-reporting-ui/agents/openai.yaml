@@ -1,0 +1,4 @@
+interface:
+  display_name: "Reporting Build Test Release Hygiene"
+  short_description: "Focused lint, test, and dependency-check runbook"
+  default_prompt: "Use this skill to choose and run the minimum required validation checks for dsbu-reporting-ui."

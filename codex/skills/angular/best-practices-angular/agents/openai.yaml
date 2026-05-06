@@ -1,0 +1,4 @@
+interface:
+  display_name: "Angular Best Practices"
+  short_description: "Angular findings queue with util status tracking"
+  default_prompt: "Use $best-practices-angular to audit changed Angular components, write findings to /codex/output/best_practices_angular_items.txt, sync /codex/output/best_practices_angular_items_status.txt, and fix one open issue at a time."

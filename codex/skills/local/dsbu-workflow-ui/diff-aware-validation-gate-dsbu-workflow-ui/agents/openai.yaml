@@ -1,0 +1,4 @@
+interface:
+  display_name: "Diff Aware Validation Gate"
+  short_description: "Classify diffs and enforce minimum validation checks"
+  default_prompt: "Use this skill to run a risk-based post-edit validation gate in dsbu-workflow-ui."

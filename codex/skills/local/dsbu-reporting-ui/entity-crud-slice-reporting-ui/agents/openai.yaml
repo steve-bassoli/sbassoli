@@ -1,0 +1,4 @@
+interface:
+  display_name: "Reporting Entity CRUD Slice"
+  short_description: "Angular CRUD slices with reporting page/grid patterns"
+  default_prompt: "Use this skill to add or update entity CRUD slices in dsbu-reporting-ui."
