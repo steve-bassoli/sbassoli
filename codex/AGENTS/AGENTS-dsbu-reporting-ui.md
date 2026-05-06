@@ -11,23 +11,25 @@ Repository: `dsbu-reporting-ui` only.
 ### Available skills (custom)
 
 - `build-test-release-hygiene-reporting-ui`: choose minimum lint/test/dependency checks.
-  File: `C:/work/dsbu-reporting-ui/codex/skills/local/build-test-release-hygiene-reporting-ui/SKILL.md`
+  File: `C:/work/sbassoli/codex/skills/local/dsbu-reporting-ui/build-test-release-hygiene-reporting-ui/SKILL.md`
 - `diff-aware-validation-gate-reporting-ui`: conditional post-edit validation for medium/high-risk or PR-ready work.
-  File: `C:/work/dsbu-reporting-ui/codex/skills/local/diff-aware-validation-gate-reporting-ui/SKILL.md`
+  File: `C:/work/sbassoli/codex/skills/local/dsbu-reporting-ui/diff-aware-validation-gate-reporting-ui/SKILL.md`
 - `best-practices-angular`: audit changed Angular components for high-value best-practice gaps and remediate iteratively.
-  File: `C:/work/dsbu-reporting-ui/codex/skills/angular/best-practices-angular/SKILL.md`
+  File: `C:/work/sbassoli/codex/skills/angular/best-practices-angular/SKILL.md`
 - `guardrail-enforcer-angular`: enforce Angular template/component/lint guardrails for changed files under `apps/**/src/**` and `libs/**/src/**`.
-  File: `C:/work/dsbu-reporting-ui/codex/skills/angular/guardrail-enforcer-angular/SKILL.md`
+  File: `C:/work/sbassoli/codex/skills/angular/guardrail-enforcer-angular/SKILL.md`
 - `iterative-unit-tests`: iterative unit test backlog/execution with approval between items.
-  File: `C:/work/dsbu-reporting-ui/codex/skills/common/iterative-unit-tests/SKILL.md`
+  File: `C:/work/sbassoli/codex/skills/common/iterative-unit-tests/SKILL.md`
 - `entity-crud-slice-reporting-ui`: implement/update Angular entity CRUD slices.
-  File: `C:/work/dsbu-reporting-ui/codex/skills/local/entity-crud-slice-reporting-ui/SKILL.md`
+  File: `C:/work/sbassoli/codex/skills/local/dsbu-reporting-ui/entity-crud-slice-reporting-ui/SKILL.md`
 - `iterative-abstraction-check`: duplicate/repeated-logic and scaffolding-artifact iterative gate.
-  File: `C:/work/dsbu-reporting-ui/codex/skills/common/iterative-abstraction-check/SKILL.md`
+  File: `C:/work/sbassoli/codex/skills/common/iterative-abstraction-check/SKILL.md`
 - `iterative-github-comments`: process unresolved PR comments iteratively with status tracking.
-  File: `C:/work/dsbu-reporting-ui/codex/skills/common/iterative-github-comments/SKILL.md`
+  File: `C:/work/sbassoli/codex/skills/common/iterative-github-comments/SKILL.md`
 - `iterative-implementation`: write step plans to `/codex/output/iterative_implementation_items.txt` and execute iteratively.
-  File: `C:/work/dsbu-reporting-ui/codex/skills/common/iterative-implementation/SKILL.md`
+  File: `C:/work/sbassoli/codex/skills/common/iterative-implementation/SKILL.md`
+- `central-codex-bootstrap-management`: manage centralized repo AGENTS bootstraps and shared Codex store references.
+  File: `C:/work/sbassoli/codex/skills/common/central-codex-bootstrap-management/SKILL.md`
 
 ### Available skills (system)
 

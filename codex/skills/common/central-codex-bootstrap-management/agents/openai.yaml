@@ -1,0 +1,4 @@
+interface:
+  display_name: "Central Codex Bootstrap Management"
+  short_description: "Manage central AGENTS bootstraps."
+  default_prompt: "Centralize or validate this repository AGENTS.md bootstrap against the shared Codex store."

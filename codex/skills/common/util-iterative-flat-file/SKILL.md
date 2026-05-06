@@ -9,12 +9,12 @@ description: Standardize flat-file tracking for iterative workflows by using an 
 
 1. Build queue items at `/codex/output/<invoking_skill>_items.txt` using [references/unified-item-attributes.md](references/unified-item-attributes.md).
 2. Initialize or refresh state:
-   `powershell -File codex/skills/common/util-iterative-flat-file/scripts/sync-iterative-state.ps1 -InvokingSkillName "<invoking_skill>"`
+   `powershell -File C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\sync-iterative-state.ps1 -InvokingSkillName "<invoking_skill>"`
 3. Process one `open` item at a time in queue `order`.
 4. Update only state after each item:
-   `powershell -File codex/skills/common/util-iterative-flat-file/scripts/set-iterative-item-status.ps1 -InvokingSkillName "<invoking_skill>" -ItemId "<id>" -Status done -Notes "<short disposition>"`
+   `powershell -File C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\set-iterative-item-status.ps1 -InvokingSkillName "<invoking_skill>" -ItemId "<id>" -Status done -Notes "<short disposition>"`
 5. Report progress:
-   `powershell -File codex/skills/common/util-iterative-flat-file/scripts/get-iterative-status-summary.ps1 -InvokingSkillName "<invoking_skill>"`
+   `powershell -File C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\get-iterative-status-summary.ps1 -InvokingSkillName "<invoking_skill>"`
 
 ## Required Pattern
 

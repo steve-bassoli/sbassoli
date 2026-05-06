@@ -10,24 +10,26 @@ Repository: `dsbu-workflow-ui` only.
 
 ### Available skills (custom)
 
-- `build-test-release-hygiene-workflow-ui`: choose minimum lint/test/release checks.  
-  File: `C:/work/dsbu-workflow-ui/codex/skills/local/build-test-release-hygiene-workflow-ui/SKILL.md`
-- `diff-aware-validation-gate-workflow-ui`: conditional post-edit validation for medium/high-risk or PR-ready work.  
-  File: `C:/work/dsbu-workflow-ui/codex/skills/local/diff-aware-validation-gate-workflow-ui/SKILL.md`
+- `build-test-release-hygiene-dsbu-workflow-ui`: choose minimum lint/test/release checks.  
+  File: `C:/work/sbassoli/codex/skills/local/dsbu-workflow-ui/build-test-release-hygiene-dsbu-workflow-ui/SKILL.md`
+- `diff-aware-validation-gate-dsbu-workflow-ui`: conditional post-edit validation for medium/high-risk or PR-ready work.  
+  File: `C:/work/sbassoli/codex/skills/local/dsbu-workflow-ui/diff-aware-validation-gate-dsbu-workflow-ui/SKILL.md`
 - `best-practices-angular`: audit changed Angular components for high-value best-practice gaps and remediate iteratively.  
-  File: `C:/work/dsbu-workflow-ui/codex/skills/angular/best-practices-angular/SKILL.md`
+  File: `C:/work/sbassoli/codex/skills/angular/best-practices-angular/SKILL.md`
 - `guardrail-enforcer-angular`: enforce Angular template/component/lint guardrails for changed files under `html/src/app/**`.  
-  File: `C:/work/dsbu-workflow-ui/codex/skills/angular/guardrail-enforcer-angular/SKILL.md`
+  File: `C:/work/sbassoli/codex/skills/angular/guardrail-enforcer-angular/SKILL.md`
 - `iterative-unit-tests`: iterative unit test backlog/execution with approval between items.  
-  File: `C:/work/dsbu-workflow-ui/codex/skills/common/iterative-unit-tests/SKILL.md`
-- `entity-crud-slice-workflow-ui`: implement/update Angular entity CRUD slices.  
-  File: `C:/work/dsbu-workflow-ui/codex/skills/local/entity-crud-slice-workflow-ui/SKILL.md`
+  File: `C:/work/sbassoli/codex/skills/common/iterative-unit-tests/SKILL.md`
+- `entity-crud-slice-dsbu-workflow-ui`: implement/update Angular entity CRUD slices.  
+  File: `C:/work/sbassoli/codex/skills/local/dsbu-workflow-ui/entity-crud-slice-dsbu-workflow-ui/SKILL.md`
 - `iterative-abstraction-check`: duplicate/repeated-logic and scaffolding-artifact iterative gate.  
-  File: `C:/work/dsbu-workflow-ui/codex/skills/common/iterative-abstraction-check/SKILL.md`
+  File: `C:/work/sbassoli/codex/skills/common/iterative-abstraction-check/SKILL.md`
 - `iterative-github-comments`: process unresolved PR comments iteratively with status tracking.  
-  File: `C:/work/dsbu-workflow-ui/codex/skills/common/iterative-github-comments/SKILL.md`
+  File: `C:/work/sbassoli/codex/skills/common/iterative-github-comments/SKILL.md`
 - `iterative-implementation`: write step plan to `./agent/implementation-steps.txt` and execute iteratively.  
-  File: `C:/work/dsbu-workflow-ui/codex/skills/common/iterative-implementation/SKILL.md`
+  File: `C:/work/sbassoli/codex/skills/common/iterative-implementation/SKILL.md`
+- `central-codex-bootstrap-management`: manage centralized repo AGENTS bootstraps and shared Codex store references.  
+  File: `C:/work/sbassoli/codex/skills/common/central-codex-bootstrap-management/SKILL.md`
 
 ### Available skills (system)
 
@@ -41,8 +43,8 @@ Repository: `dsbu-workflow-ui` only.
 - Trigger a skill when the user names it (with `$SkillName` or plain text) or when the task clearly matches the skill description.
 - If multiple skills match, use the minimal set and state the order.
 - Do not carry skills across turns unless re-mentioned.
-- `diff-aware-validation-gate-workflow-ui` is conditional, not mandatory every turn.
-- Use `diff-aware-validation-gate-workflow-ui` for medium/high-risk changes or PR-ready validation.
+- `diff-aware-validation-gate-dsbu-workflow-ui` is conditional, not mandatory every turn.
+- Use `diff-aware-validation-gate-dsbu-workflow-ui` for medium/high-risk changes or PR-ready validation.
 - For low-risk localized changes, run targeted validation only and summarize what ran.
 - If a named skill is missing or unreadable, state it briefly and continue with the best fallback.
 
@@ -75,4 +77,4 @@ Repository: `dsbu-workflow-ui` only.
 11. Start each task with a task contract using exactly: `Goal`, `Out of scope`, `Acceptance criteria`, `Validation command(s)`, `Constraints`.
 12. Allow quick mode only for tiny, low-risk requests; quick mode still requires acceptance criteria and validation command(s).
 13. Do not add low-value unit tests unless explicitly requested.
-14. When changing `/AGENTS.md` or `/codex/**`, propagate relevant updates to `C:\work\codex\` to keep the shared Codex skills current.
+14. When changing `/AGENTS.md` or `/codex/**`, propagate relevant updates to `C:\work\sbassoli\codex\` to keep the shared Codex skills current.

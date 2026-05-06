@@ -13,7 +13,7 @@ description: Build and execute a lightweight unit-test plan from current local c
 4. Build a small, risk-prioritized backlog.
 5. Write `Essential` items to `/codex/output/iterative_unit_tests_items.txt` using util queue schema.
 6. Sync status file:
-   - `powershell -File codex/skills/common/util-iterative-flat-file/scripts/sync-iterative-state.ps1 -InvokingSkillName "iterative-unit-tests"`
+   - `powershell -File C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\sync-iterative-state.ps1 -InvokingSkillName "iterative-unit-tests"`
 7. Ask for approval before implementing tests.
 8. Implement one open item, run the narrowest validation, update status with util script, and ask for approval for the next item.
 
@@ -24,9 +24,9 @@ description: Build and execute a lightweight unit-test plan from current local c
 - Mutable progress state:
   - `/codex/output/iterative_unit_tests_items_status.txt`
 - Utility scripts:
-  - `codex/skills/common/util-iterative-flat-file/scripts/sync-iterative-state.ps1`
-  - `codex/skills/common/util-iterative-flat-file/scripts/set-iterative-item-status.ps1`
-  - `codex/skills/common/util-iterative-flat-file/scripts/get-iterative-status-summary.ps1`
+  - `C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\sync-iterative-state.ps1`
+  - `C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\set-iterative-item-status.ps1`
+  - `C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\get-iterative-status-summary.ps1`
 
 ## Step 1: Determine Changed Files
 
@@ -100,7 +100,7 @@ Do not implement tests before approval.
    - command + result
    - behavior covered
 7. Update status with util script:
-   - `powershell -File codex/skills/common/util-iterative-flat-file/scripts/set-iterative-item-status.ps1 -InvokingSkillName "iterative-unit-tests" -ItemId "<id>" -Status done|skipped|blocked -Notes "<short disposition>"`
+   - `powershell -File C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\set-iterative-item-status.ps1 -InvokingSkillName "iterative-unit-tests" -ItemId "<id>" -Status done|skipped|blocked -Notes "<short disposition>"`
 8. Ask:
    - `Please verify this result. Approve moving to the next test item?`
 

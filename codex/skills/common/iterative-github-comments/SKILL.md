@@ -11,7 +11,7 @@ description: Review unresolved feedback iteratively from either a GitHub pull re
    - **PR URL mode:** Run `scripts/build-unresolved-pr-comments.ps1 -PrUrl "<github-pr-url>"`.
    - **Manual mode:** Build `/codex/output/iterative_github_comments_items.txt` directly from user-pasted comments when no PR URL is provided.
 2. For manual mode, sync status file with util script:
-   - `powershell -File codex/skills/common/util-iterative-flat-file/scripts/sync-iterative-state.ps1 -InvokingSkillName "iterative-github-comments"`
+   - `powershell -File C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\sync-iterative-state.ps1 -InvokingSkillName "iterative-github-comments"`
 3. For PR URL mode, stop if the script reports repo mismatch or branch mismatch.
 4. Reconcile queue completeness and ensure each item has `id`, `order`, `item_type`, and `description` with best-effort source/context metadata.
 5. Ask: `Would you like me to start addressing unresolved comments one by one?`
@@ -26,9 +26,9 @@ description: Review unresolved feedback iteratively from either a GitHub pull re
 - Mutable progress state:
   - `/codex/output/iterative_github_comments_items_status.txt`
 - Utility scripts:
-  - `codex/skills/common/util-iterative-flat-file/scripts/sync-iterative-state.ps1`
-  - `codex/skills/common/util-iterative-flat-file/scripts/set-iterative-item-status.ps1`
-  - `codex/skills/common/util-iterative-flat-file/scripts/get-iterative-status-summary.ps1`
+  - `C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\sync-iterative-state.ps1`
+  - `C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\set-iterative-item-status.ps1`
+  - `C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\get-iterative-status-summary.ps1`
 
 ## Workflow
 
@@ -50,7 +50,7 @@ description: Review unresolved feedback iteratively from either a GitHub pull re
    - Run targeted validation for the touched files.
    - Ask the user to review before continuing.
    - Update state with util script:
-     - `powershell -File codex/skills/common/util-iterative-flat-file/scripts/set-iterative-item-status.ps1 -InvokingSkillName "iterative-github-comments" -ItemId "<id>" -Status done|skipped|blocked -Notes "<short disposition>"`
+     - `powershell -File C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\set-iterative-item-status.ps1 -InvokingSkillName "iterative-github-comments" -ItemId "<id>" -Status done|skipped|blocked -Notes "<short disposition>"`
 6. Repeat until no `open` items remain. Do not declare completion while any item is still `open` unless the user explicitly asks to stop.
 7. If the user explicitly stops early, keep queue + status files and state that processing is incomplete with remaining `open` items.
 8. Keep both files as persistent audit records.

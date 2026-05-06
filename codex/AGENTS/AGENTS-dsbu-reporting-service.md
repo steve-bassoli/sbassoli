@@ -11,19 +11,21 @@ Repository: `dsbu-reporting-service` only.
 ### Available skills (custom)
 
 - `best-practices-java`: audit changed Java and Spring Boot files for high-value best-practice gaps and remediate iteratively.  
-  File: `C:/work/dsbu-reporting-service/codex/skills/java/best-practices-java/SKILL.md`
+  File: `C:/work/sbassoli/codex/skills/java/best-practices-java/SKILL.md`
 - `guardrail-enforcer-java`: enforce Java/backend repo guardrails for `.java`, Gradle, and MyBatis changes, including Spotless/Xlint/SonarQube-sensitive hygiene in touched scope.  
-  File: `C:/work/dsbu-reporting-service/codex/skills/java/guardrail-enforcer-java/SKILL.md`
+  File: `C:/work/sbassoli/codex/skills/java/guardrail-enforcer-java/SKILL.md`
 - `diff-aware-validation-gate-workflows`: conditional post-edit validation for medium/high-risk or PR-ready backend work.  
-  File: `C:/work/dsbu-reporting-service/codex/skills/local/diff-aware-validation-gate-workflows/SKILL.md`
+  File: `C:/work/sbassoli/codex/skills/local/dsbu-workflows/diff-aware-validation-gate-workflows/SKILL.md`
 - `iterative-unit-tests`: iterative unit test backlog/execution with approval between items.  
-  File: `C:/work/dsbu-reporting-service/codex/skills/common/iterative-unit-tests/SKILL.md`
+  File: `C:/work/sbassoli/codex/skills/common/iterative-unit-tests/SKILL.md`
 - `iterative-abstraction-check`: duplicate/repeated-logic and scaffolding-artifact iterative gate.  
-  File: `C:/work/dsbu-reporting-service/codex/skills/common/iterative-abstraction-check/SKILL.md`
+  File: `C:/work/sbassoli/codex/skills/common/iterative-abstraction-check/SKILL.md`
 - `iterative-github-comments`: process unresolved PR comments iteratively with status tracking.  
-  File: `C:/work/dsbu-reporting-service/codex/skills/common/iterative-github-comments/SKILL.md`
+  File: `C:/work/sbassoli/codex/skills/common/iterative-github-comments/SKILL.md`
 - `iterative-implementation`: write step plan to `./agent/implementation-steps.txt` and execute iteratively.  
-  File: `C:/work/dsbu-reporting-service/codex/skills/common/iterative-implementation/SKILL.md`
+  File: `C:/work/sbassoli/codex/skills/common/iterative-implementation/SKILL.md`
+- `central-codex-bootstrap-management`: manage centralized repo AGENTS bootstraps and shared Codex store references.  
+  File: `C:/work/sbassoli/codex/skills/common/central-codex-bootstrap-management/SKILL.md`
 
 ### Available skills (system)
 

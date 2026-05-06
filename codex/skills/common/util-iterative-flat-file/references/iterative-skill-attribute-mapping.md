@@ -1,6 +1,6 @@
 # Iterative Skill Attribute Mapping
 
-This mapping is derived from local iterative skills in `codex/skills/common`:
+This mapping is derived from central iterative skills in `C:\work\sbassoli\codex\skills\common`:
 
 - `iterative-github-comments`
 - `iterative-unit-tests`

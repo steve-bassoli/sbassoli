@@ -14,7 +14,7 @@ description: Reduce noisy diffs iteratively while preserving behavior by buildin
 3. Build a small prioritized backlog of diff-minimization items.
 4. Write queue items to `/codex/output/iterative_minimal_diff_items.txt`.
 5. Sync status file:
-   - `powershell -File codex/skills/common/util-iterative-flat-file/scripts/sync-iterative-state.ps1 -InvokingSkillName "iterative-minimal-diff"`
+   - `powershell -File C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\sync-iterative-state.ps1 -InvokingSkillName "iterative-minimal-diff"`
 6. Ask for approval before edits.
 7. Process one open item at a time, validate, update status, and ask approval before the next item.
 
@@ -25,9 +25,9 @@ description: Reduce noisy diffs iteratively while preserving behavior by buildin
 - Mutable progress state:
   - `/codex/output/iterative_minimal_diff_items_status.txt`
 - Utility scripts:
-  - `codex/skills/common/util-iterative-flat-file/scripts/sync-iterative-state.ps1`
-  - `codex/skills/common/util-iterative-flat-file/scripts/set-iterative-item-status.ps1`
-  - `codex/skills/common/util-iterative-flat-file/scripts/get-iterative-status-summary.ps1`
+  - `C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\sync-iterative-state.ps1`
+  - `C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\set-iterative-item-status.ps1`
+  - `C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\get-iterative-status-summary.ps1`
 
 ## Step 1: Determine Candidate Files
 
@@ -89,7 +89,7 @@ Do not start edits before approval.
    - before/after diff stats (if available)
    - validation command + result
 8. Update status:
-   - `powershell -File codex/skills/common/util-iterative-flat-file/scripts/set-iterative-item-status.ps1 -InvokingSkillName "iterative-minimal-diff" -ItemId "<id>" -Status done|skipped|blocked -Notes "<short disposition>"`
+   - `powershell -File C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\set-iterative-item-status.ps1 -InvokingSkillName "iterative-minimal-diff" -ItemId "<id>" -Status done|skipped|blocked -Notes "<short disposition>"`
 9. Ask:
    - `Please verify this diff reduction. Approve moving to the next item?`
 

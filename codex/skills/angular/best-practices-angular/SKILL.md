@@ -12,7 +12,7 @@ description: "Audit Angular best-practice compliance for changed component files
 3. Review each changed component file in full, not only changed hunks.
 4. Record best-practice findings to `/codex/output/best_practices_angular_items.txt` using util queue schema.
 5. Sync mutable status file:
-   - `powershell -File codex/skills/common/util-iterative-flat-file/scripts/sync-iterative-state.ps1 -InvokingSkillName "best-practices-angular"`
+   - `powershell -File C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\sync-iterative-state.ps1 -InvokingSkillName "best-practices-angular"`
 6. Fix one open finding at a time.
 7. After each fix, stop and ask the user whether to continue to the next fix.
 
@@ -23,9 +23,9 @@ description: "Audit Angular best-practice compliance for changed component files
 - Mutable progress state:
   - `/codex/output/best_practices_angular_items_status.txt`
 - Utility scripts:
-  - `codex/skills/common/util-iterative-flat-file/scripts/sync-iterative-state.ps1`
-  - `codex/skills/common/util-iterative-flat-file/scripts/set-iterative-item-status.ps1`
-  - `codex/skills/common/util-iterative-flat-file/scripts/get-iterative-status-summary.ps1`
+  - `C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\sync-iterative-state.ps1`
+  - `C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\set-iterative-item-status.ps1`
+  - `C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\get-iterative-status-summary.ps1`
 
 ## Angular Review Rules
 
@@ -69,7 +69,7 @@ Include only findings that are meaningfully actionable for the current repositor
 3. Apply one fix.
 4. Run targeted validation for the modified file(s), typically a focused lint command.
 5. Update finding status with util script:
-   - `powershell -File codex/skills/common/util-iterative-flat-file/scripts/set-iterative-item-status.ps1 -InvokingSkillName "best-practices-angular" -ItemId "<id>" -Status done|skipped|blocked -Notes "<short disposition>"`
+   - `powershell -File C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\set-iterative-item-status.ps1 -InvokingSkillName "best-practices-angular" -ItemId "<id>" -Status done|skipped|blocked -Notes "<short disposition>"`
 6. Report the change briefly.
 7. Prompt user: `Issue <id> fixed. Continue to next open issue?`
 8. Continue only after user confirmation.

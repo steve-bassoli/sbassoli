@@ -10,9 +10,9 @@ description: Run an iterative abstraction gate on local changes by detecting dup
 1. Read [references/abstraction-rules.md](references/abstraction-rules.md).
 2. Read [references/scaffolding-artifact-patterns.md](references/scaffolding-artifact-patterns.md).
 3. Run duplicate scan:
-   `powershell -File codex/skills/common/iterative-abstraction-check/scripts/check-diff-abstractions.ps1 -RepoRoot . -CompareRef <default-branch> -PersistPath "codex/output/iterative_abstraction_check_run_log.txt" -ChecklistPath "codex/output/iterative_abstraction_check_candidates.txt" -QueuePath "codex/output/iterative_abstraction_check_items.txt" -NoFailOnHighConfidence`
+   `powershell -File C:\work\sbassoli\codex\skills\common\iterative-abstraction-check\scripts\check-diff-abstractions.ps1 -RepoRoot . -CompareRef <default-branch> -PersistPath "codex/output/iterative_abstraction_check_run_log.txt" -ChecklistPath "codex/output/iterative_abstraction_check_candidates.txt" -QueuePath "codex/output/iterative_abstraction_check_items.txt" -NoFailOnHighConfidence`
 4. Run scaffolding pattern searches from the reference file within changed-file scope and append/update scaffolding items in `/codex/output/iterative_abstraction_check_items.txt`, then resync status:
-   - `powershell -File codex/skills/common/util-iterative-flat-file/scripts/sync-iterative-state.ps1 -InvokingSkillName "iterative-abstraction-check"`
+   - `powershell -File C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\sync-iterative-state.ps1 -InvokingSkillName "iterative-abstraction-check"`
 5. Ask for approval before fixes.
 6. Address one open item at a time (duplicate candidate or scaffolding item), validate, update util status, then ask for approval before the next item.
 
@@ -27,9 +27,9 @@ description: Run an iterative abstraction gate on local changes by detecting dup
   - `/codex/output/iterative_abstraction_check_candidates.txt`
   - `/codex/output/iterative_abstraction_check_scaffolding.txt`
 - Utility scripts:
-  - `codex/skills/common/util-iterative-flat-file/scripts/sync-iterative-state.ps1`
-  - `codex/skills/common/util-iterative-flat-file/scripts/set-iterative-item-status.ps1`
-  - `codex/skills/common/util-iterative-flat-file/scripts/get-iterative-status-summary.ps1`
+  - `C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\sync-iterative-state.ps1`
+  - `C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\set-iterative-item-status.ps1`
+  - `C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\get-iterative-status-summary.ps1`
 
 ## Required Persistence
 
@@ -54,7 +54,7 @@ description: Run an iterative abstraction gate on local changes by detecting dup
    - temporary markers tied to scaffolding
 4. Build or refresh `/codex/output/iterative_abstraction_check_items.txt` before edits, including any scaffolding items not emitted by the duplicate script.
 5. Re-sync util status after queue updates:
-   - `powershell -File codex/skills/common/util-iterative-flat-file/scripts/sync-iterative-state.ps1 -InvokingSkillName "iterative-abstraction-check"`
+   - `powershell -File C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\sync-iterative-state.ps1 -InvokingSkillName "iterative-abstraction-check"`
 6. Ask:
    - `I prepared abstraction and scaffolding checklists. Would you like me to address items one by one?`
 7. Process one item at a time after approval:
@@ -96,7 +96,7 @@ Report:
 Run at least:
 
 - duplicate scan smoke command:
-  `powershell -File codex/skills/common/iterative-abstraction-check/scripts/check-diff-abstractions.ps1 -RepoRoot . -CompareRef <default-branch> -PersistPath "codex/output/iterative_abstraction_check_run_log.txt" -ChecklistPath "codex/output/iterative_abstraction_check_candidates.txt" -QueuePath "codex/output/iterative_abstraction_check_items.txt" -NoFailOnHighConfidence`
+  `powershell -File C:\work\sbassoli\codex\skills\common\iterative-abstraction-check\scripts\check-diff-abstractions.ps1 -RepoRoot . -CompareRef <default-branch> -PersistPath "codex/output/iterative_abstraction_check_run_log.txt" -ChecklistPath "codex/output/iterative_abstraction_check_candidates.txt" -QueuePath "codex/output/iterative_abstraction_check_items.txt" -NoFailOnHighConfidence`
 - targeted lint/test commands for each addressed queue item
 
 ## Resources

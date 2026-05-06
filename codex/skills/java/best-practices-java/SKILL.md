@@ -22,7 +22,7 @@ description: Audit changed Java and Spring Boot files in the active repository f
    - Human-readable report: `/codex/output/best-practices-java.txt`
    - Immutable queue intake: `/codex/output/best_practices_java_items.txt`
 7. Sync mutable status state with util-iterative-flat-file:
-   - `powershell -File codex/skills/common/util-iterative-flat-file/scripts/sync-iterative-state.ps1 -InvokingSkillName "best-practices-java"`
+   - `powershell -File C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\sync-iterative-state.ps1 -InvokingSkillName "best-practices-java"`
 8. Fix one `open` violation at a time using `/codex/output/best_practices_java_items_status.txt`.
 9. After each fix, stop and ask the user whether to continue to the next fix.
 
@@ -35,9 +35,9 @@ description: Audit changed Java and Spring Boot files in the active repository f
 - Mutable progress state:
   - `/codex/output/best_practices_java_items_status.txt`
 - Utility scripts:
-  - `codex/skills/common/util-iterative-flat-file/scripts/sync-iterative-state.ps1`
-  - `codex/skills/common/util-iterative-flat-file/scripts/set-iterative-item-status.ps1`
-  - `codex/skills/common/util-iterative-flat-file/scripts/get-iterative-status-summary.ps1`
+  - `C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\sync-iterative-state.ps1`
+  - `C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\set-iterative-item-status.ps1`
+  - `C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\get-iterative-status-summary.ps1`
 
 ## Java and Spring Review Rules
 
@@ -87,14 +87,14 @@ Also write queue items to `/codex/output/best_practices_java_items.txt` as a JSO
 
 After writing/refreshing the queue file, always run:
 
-`powershell -File codex/skills/common/util-iterative-flat-file/scripts/sync-iterative-state.ps1 -InvokingSkillName "best-practices-java"`
+`powershell -File C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\sync-iterative-state.ps1 -InvokingSkillName "best-practices-java"`
 
 ## Remediation Loop
 
 1. Apply one fix.
 2. Run targeted validation for the modified file(s), typically `./gradlew.bat :<module>:compileJava` or a focused module test when behavior changed.
 3. Update mutable status with util script:
-   - `powershell -File codex/skills/common/util-iterative-flat-file/scripts/set-iterative-item-status.ps1 -InvokingSkillName "best-practices-java" -ItemId "<id>" -Status done|skipped|blocked -Notes "<short disposition>"`
+   - `powershell -File C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\set-iterative-item-status.ps1 -InvokingSkillName "best-practices-java" -ItemId "<id>" -Status done|skipped|blocked -Notes "<short disposition>"`
 4. Reflect the same status in `/codex/output/best-practices-java.txt`.
 5. Report the change briefly.
 6. Prompt user: `Issue <n> fixed. Continue to issue <n+1>?`

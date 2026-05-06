@@ -12,7 +12,7 @@ description: Create and persist implementation-step plans as util-iterative-flat
 3. Write the plan queue to `/codex/output/iterative_implementation_items.txt`.
 4. Ensure every queue item contains execution context and validation details.
 5. Sync status file:
-   - `powershell -File codex/skills/common/util-iterative-flat-file/scripts/sync-iterative-state.ps1 -InvokingSkillName "iterative-implementation"`
+   - `powershell -File C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\sync-iterative-state.ps1 -InvokingSkillName "iterative-implementation"`
 6. When executing, complete only one open step at a time.
 7. After each completed step, ask the user to verify and explicitly confirm whether to continue to the next step.
 8. Return a short response that confirms file output and summarizes the sequence.
@@ -24,9 +24,9 @@ description: Create and persist implementation-step plans as util-iterative-flat
 - Mutable progress state:
   - `/codex/output/iterative_implementation_items_status.txt`
 - Utility scripts:
-  - `codex/skills/common/util-iterative-flat-file/scripts/sync-iterative-state.ps1`
-  - `codex/skills/common/util-iterative-flat-file/scripts/set-iterative-item-status.ps1`
-  - `codex/skills/common/util-iterative-flat-file/scripts/get-iterative-status-summary.ps1`
+  - `C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\sync-iterative-state.ps1`
+  - `C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\set-iterative-item-status.ps1`
+  - `C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\get-iterative-status-summary.ps1`
 
 ## Required Behavior
 
@@ -84,7 +84,7 @@ Guidance:
 2. Resolve the matching queue item in `/codex/output/iterative_implementation_items.txt`.
 3. Execute only that step.
 4. Run the step validation and update step status:
-   - `powershell -File codex/skills/common/util-iterative-flat-file/scripts/set-iterative-item-status.ps1 -InvokingSkillName "iterative-implementation" -ItemId "<id>" -Status done|blocked|skipped -Notes "<short disposition>"`
+   - `powershell -File C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\set-iterative-item-status.ps1 -InvokingSkillName "iterative-implementation" -ItemId "<id>" -Status done|blocked|skipped -Notes "<short disposition>"`
 5. Ask the user to verify outcomes for that step.
 6. Ask an explicit next-step prompt and wait for user confirmation before proceeding.
 7. Do not start the next `open` step until user confirmation is received.
