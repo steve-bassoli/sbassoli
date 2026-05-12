@@ -5,6 +5,14 @@ description: Review unresolved feedback iteratively from either a GitHub pull re
 
 # Iterative GitHub Comments
 
+## Hard Guardrail: Local-Only Processing
+
+- This skill is for reading PR feedback, building local queue/status files, making local code changes, and reporting progress in chat.
+- Never create, reply to, update, delete, submit, resolve, or react to GitHub PR/issue/review comments while using this skill.
+- Requests like `next`, `process comments`, `address PR comments`, `iterative-github-comments`, or a PR URL are not authorization to post to GitHub.
+- If asked to post/reply/comment/review/react/resolve on GitHub, provide the exact text or action as a local draft in chat and state that GitHub/CR writes are disabled.
+- Do not call `_add_comment_to_issue`, `_reply_to_review_comment`, `_add_review_to_pr`, `_update_issue_comment`, `_update_review_comment`, reaction tools, or equivalent GitHub write tools.
+
 ## Quick Start
 
 1. Select intake mode:
@@ -17,7 +25,7 @@ description: Review unresolved feedback iteratively from either a GitHub pull re
 5. Ask: `Would you like me to start addressing unresolved comments one by one?`
 6. Process one `open` item at a time using `/codex/output/iterative_github_comments_items_status.txt`.
 7. After each item, ask: `Please review this change. Should I process the next unresolved comment?`
-8. Keep both files after processing and present a full status summary that includes any remaining open/blocked items.
+8. Keep both files after processing and present a full status summary in chat that includes any remaining open/blocked items.
 
 ## Canonical Files
 
@@ -49,6 +57,7 @@ description: Review unresolved feedback iteratively from either a GitHub pull re
    - Apply minimal code changes for that single item, or mark it as `skipped` with a concise reason.
    - Run targeted validation for the touched files.
    - Ask the user to review before continuing.
+   - Do not post a GitHub reply or review-status update.
    - Update state with util script:
      - `powershell -File C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\set-iterative-item-status.ps1 -InvokingSkillName "iterative-github-comments" -ItemId "<id>" -Status done|skipped|blocked -Notes "<short disposition>"`
 6. Repeat until no `open` items remain. Do not declare completion while any item is still `open` unless the user explicitly asks to stop.

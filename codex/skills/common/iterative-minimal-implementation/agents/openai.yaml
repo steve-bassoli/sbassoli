@@ -1,0 +1,4 @@
+interface:
+  display_name: "Iterative Minimal Implementation"
+  short_description: "Minimal happy-path step execution"
+  default_prompt: "Use $iterative-minimal-implementation to plan and execute the smallest happy-path implementation one step at a time, with no unit tests or extra error handling."

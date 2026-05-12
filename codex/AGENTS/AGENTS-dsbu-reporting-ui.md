@@ -55,6 +55,13 @@ Repository: `dsbu-reporting-ui` only.
 - Load only the necessary referenced files; do not bulk-load assets/references.
 - Prefer provided scripts/assets/templates over recreating equivalent content.
 
+## Non-Negotiable GitHub Write Ban
+
+- Never create, reply to, update, delete, submit, resolve, or react to GitHub PR/issue/review comments.
+- Treat requests like `address comments`, `process comments`, `next`, `iterative-github-comments`, `review PR`, or a PR URL as permission to read GitHub comments and make local code/status-file changes only.
+- If asked to post/reply/comment/review/react/resolve on GitHub, provide the exact text or action as a local draft in chat and state that GitHub/CR writes are disabled.
+- Prohibited always: `_add_comment_to_issue`, `_reply_to_review_comment`, `_add_review_to_pr`, `_update_issue_comment`, `_update_review_comment`, reaction tools, and any equivalent GitHub write tool.
+
 ## Skill Execution Metrics
 
 - If one or more custom (non-system) skills were used, include `Skill Execution Metrics` in the final response.

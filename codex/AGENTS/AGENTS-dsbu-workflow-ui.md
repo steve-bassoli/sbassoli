@@ -28,6 +28,8 @@ Repository: `dsbu-workflow-ui` only.
   File: `C:/work/sbassoli/codex/skills/common/iterative-github-comments/SKILL.md`
 - `iterative-implementation`: write step plan to `./agent/implementation-steps.txt` and execute iteratively.  
   File: `C:/work/sbassoli/codex/skills/common/iterative-implementation/SKILL.md`
+- `iterative-minimal-implementation`: execute the smallest happy-path implementation iteratively without unit tests or extra error handling.  
+  File: `C:/work/sbassoli/codex/skills/common/iterative-minimal-implementation/SKILL.md`
 - `central-codex-bootstrap-management`: manage centralized repo AGENTS bootstraps and shared Codex store references.  
   File: `C:/work/sbassoli/codex/skills/common/central-codex-bootstrap-management/SKILL.md`
 
@@ -54,6 +56,13 @@ Repository: `dsbu-workflow-ui` only.
 - Resolve skill-referenced relative paths from the skill directory first.
 - Load only the necessary referenced files; do not bulk-load assets/references.
 - Prefer provided scripts/assets/templates over recreating equivalent content.
+
+## Non-Negotiable GitHub Write Ban
+
+- Never create, reply to, update, delete, submit, resolve, or react to GitHub PR/issue/review comments.
+- Treat requests like `address comments`, `process comments`, `next`, `iterative-github-comments`, `review PR`, or a PR URL as permission to read GitHub comments and make local code/status-file changes only.
+- If asked to post/reply/comment/review/react/resolve on GitHub, provide the exact text or action as a local draft in chat and state that GitHub/CR writes are disabled.
+- Prohibited always: `_add_comment_to_issue`, `_reply_to_review_comment`, `_add_review_to_pr`, `_update_issue_comment`, `_update_review_comment`, reaction tools, and any equivalent GitHub write tool.
 
 ## Skill Execution Metrics
 

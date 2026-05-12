@@ -1,4 +1,4 @@
 interface:
   display_name: "Iterative GitHub Comments"
   short_description: "Address unresolved PR comments one by one"
-  default_prompt: "Use $iterative-github-comments to review this GitHub PR URL, build /codex/output/iterative_github_comments_items.txt and /codex/output/iterative_github_comments_items_status.txt, and process unresolved comments one by one."
+  default_prompt: "Use $iterative-github-comments to review this GitHub PR URL, build /codex/output/iterative_github_comments_items.txt and /codex/output/iterative_github_comments_items_status.txt, and process unresolved comments one by one locally. Do not post, reply, review, react, resolve, or otherwise write anything on GitHub."
