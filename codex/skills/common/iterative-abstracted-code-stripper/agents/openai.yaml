@@ -1,0 +1,4 @@
+interface:
+  display_name: "Iterative Abstracted Code Stripper"
+  short_description: "Strip duplicate code through shared abstractions"
+  default_prompt: "Use $iterative-abstracted-code-stripper to quickly strip one service toward a shared abstraction and report cleanup gaps."
