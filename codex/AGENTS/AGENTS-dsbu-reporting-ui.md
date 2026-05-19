@@ -8,43 +8,26 @@ Repository: `dsbu-reporting-ui` only.
 
 ## Skills
 
-### Available skills (custom)
+### Custom skill discovery paths
 
-- `build-test-release-hygiene-reporting-ui`: choose minimum lint/test/dependency checks.
-  File: `C:/work/sbassoli/codex/skills/local/dsbu-reporting-ui/build-test-release-hygiene-reporting-ui/SKILL.md`
-- `diff-aware-validation-gate-reporting-ui`: conditional post-edit validation for medium/high-risk or PR-ready work.
-  File: `C:/work/sbassoli/codex/skills/local/dsbu-reporting-ui/diff-aware-validation-gate-reporting-ui/SKILL.md`
-- `best-practices-angular`: audit changed Angular components for high-value best-practice gaps and remediate iteratively.
-  File: `C:/work/sbassoli/codex/skills/angular/best-practices-angular/SKILL.md`
-- `guardrail-enforcer-angular`: enforce Angular template/component/lint guardrails for changed files under `apps/**/src/**` and `libs/**/src/**`.
-  File: `C:/work/sbassoli/codex/skills/angular/guardrail-enforcer-angular/SKILL.md`
-- `iterative-unit-tests`: iterative unit test backlog/execution with approval between items.
-  File: `C:/work/sbassoli/codex/skills/common/iterative-unit-tests/SKILL.md`
-- `entity-crud-slice-reporting-ui`: implement/update Angular entity CRUD slices.
-  File: `C:/work/sbassoli/codex/skills/local/dsbu-reporting-ui/entity-crud-slice-reporting-ui/SKILL.md`
-- `iterative-abstraction-check`: duplicate/repeated-logic and scaffolding-artifact iterative gate.
-  File: `C:/work/sbassoli/codex/skills/common/iterative-abstraction-check/SKILL.md`
-- `iterative-github-comments`: process unresolved PR comments iteratively with status tracking.
-  File: `C:/work/sbassoli/codex/skills/common/iterative-github-comments/SKILL.md`
-- `iterative-implementation`: write step plans to `/codex/output/iterative_implementation_items.txt` and execute iteratively.
-  File: `C:/work/sbassoli/codex/skills/common/iterative-implementation/SKILL.md`
-- `central-codex-bootstrap-management`: manage centralized repo AGENTS bootstraps and shared Codex store references.
-  File: `C:/work/sbassoli/codex/skills/common/central-codex-bootstrap-management/SKILL.md`
+Custom skills are discovered from these path patterns. Do not mirror individual skill names or descriptions here; read the matching `SKILL.md` frontmatter at execution time so additions, removals, and descriptions stay current.
 
-### Available skills (system)
+- `C:/work/sbassoli/codex/skills/local/dsbu-reporting-ui/*/SKILL.md`
+- `C:/work/sbassoli/codex/skills/angular/*/SKILL.md`
+- `C:/work/sbassoli/codex/skills/common/*/SKILL.md`
 
-- `skill-creator`
-  File: `C:/Users/steve.bassoli/AppData/Local/JetBrains/IntelliJIdea2025.3/aia/codex/skills/.system/skill-creator/SKILL.md`
-- `skill-installer`
-  File: `C:/Users/steve.bassoli/AppData/Local/JetBrains/IntelliJIdea2025.3/aia/codex/skills/.system/skill-installer/SKILL.md`
+### System skills
+
+System skills are provided by the current Codex runtime. Use the session's skill registry and do not hardcode IDE-versioned system skill paths here.
 
 ## Skill Rules
 
-- Trigger a skill when the user names it (with `$SkillName` or plain text) or when the task clearly matches the skill description.
+- Discover custom skills by reading `SKILL.md` frontmatter from the paths above when task matching is needed.
+- Trigger a discovered skill when the user names it (with `$SkillName` or plain text) or when the task clearly matches the skill description.
 - If multiple skills match, use the minimal set and state the order.
 - Do not carry skills across turns unless re-mentioned.
-- `diff-aware-validation-gate-reporting-ui` is conditional, not mandatory every turn.
-- Use `diff-aware-validation-gate-reporting-ui` for medium/high-risk changes or PR-ready validation.
+- A discovered repo-local validation-gate skill is conditional, not mandatory every turn.
+- Use the matching repo-local validation-gate skill for medium/high-risk changes or PR-ready validation.
 - For low-risk localized changes, run targeted validation only and summarize what ran.
 - If a named skill is missing or unreadable, state it briefly and continue with the best fallback.
 
@@ -58,7 +41,7 @@ Repository: `dsbu-reporting-ui` only.
 ## Non-Negotiable GitHub Write Ban
 
 - Never create, reply to, update, delete, submit, resolve, or react to GitHub PR/issue/review comments.
-- Treat requests like `address comments`, `process comments`, `next`, `iterative-github-comments`, `review PR`, or a PR URL as permission to read GitHub comments and make local code/status-file changes only.
+- Treat requests like `address comments`, `process comments`, `next`, iterative GitHub-comment processing, `review PR`, or a PR URL as permission to read GitHub comments and make local code/status-file changes only.
 - If asked to post/reply/comment/review/react/resolve on GitHub, provide the exact text or action as a local draft in chat and state that GitHub/CR writes are disabled.
 - Prohibited always: `_add_comment_to_issue`, `_reply_to_review_comment`, `_add_review_to_pr`, `_update_issue_comment`, `_update_review_comment`, reaction tools, and any equivalent GitHub write tool.
 
