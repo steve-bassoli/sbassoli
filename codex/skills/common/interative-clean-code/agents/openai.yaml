@@ -1,0 +1,4 @@
+interface:
+  display_name: "Interative Clean Code"
+  short_description: "Find and clean defensive checks iteratively"
+  default_prompt: "Use $interative-clean-code on one file to identify overly cautious null and empty checks."
