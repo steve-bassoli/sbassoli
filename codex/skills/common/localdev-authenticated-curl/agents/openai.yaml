@@ -1,0 +1,4 @@
+interface:
+  display_name: "Localdev Auth Curl"
+  short_description: "Authenticate local curl requests against dev services"
+  default_prompt: "Use $localdev-authenticated-curl to test this local endpoint with the required auth headers."

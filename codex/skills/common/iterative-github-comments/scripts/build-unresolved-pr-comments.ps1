@@ -214,6 +214,10 @@ foreach ($record in $orderedRecords) {
         repo          = $prRepoSlug
         branch        = $currentBranch
         ingest_source = "github_review_threads"
+        change_summary = ""
+        over_optimization_likelihood = ""
+        overly_cautious_null_empty_checking_likelihood = ""
+        assessment_note = ""
       }
     })
 }

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Iterative Smells"
+  short_description: "Track code-smell reviews one item at a time"
+  default_prompt: "Use $iterative-smells to scan this codebase for overlapping responsibilities and write the findings to iterative flat-file outputs."

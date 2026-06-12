@@ -32,10 +32,10 @@ description: Create and persist implementation-step plans as util-iterative-flat
 
 1. Treat `/codex/output/iterative_implementation_items.txt` as the primary artifact for implementation planning requests.
 2. Overwrite the queue for a new implementation request unless the user explicitly asks to append or preserve existing content.
-3. Include all context required for execution inside each step item so an engineer can execute without revisiting earlier chat messages.
-4. Keep wording concrete and execution-oriented; avoid vague placeholders.
-5. During execution, stop after every completed step and wait for user verification before starting the next step.
-6. Prompt explicitly for continuation (for example: "Step 2 is complete. Please verify. Continue to Step 3?").
+3. Follow precedent. Plan for the happy path only. Avoid overly cautious null/empty checking.
+4. Order implementation by proving the invariant first, then ranking the next slice by effort and blast radius. Persist that order by queue file position. No guessing.
+5. Include all context required for execution inside each step item so an engineer can execute without revisiting earlier chat messages.
+6. During execution, stop after every completed step and wait for user verification before starting the next step.
 
 ## Queue Item Requirements
 
@@ -43,16 +43,14 @@ Each queue item must include:
 
 1. Required util fields:
    - `id`
-   - `order`
-   - `item_type` (`implementation_step`)
    - `description` (clear step action title/objective)
+   - `complexity` (`low`, `medium`, or `high`)
 2. Recommended util fields:
    - `source_file` (`unknown` if not step-specific)
    - `source_line_start` (`unknown` unless known)
    - `source_line_end` (`unknown` unless known)
    - `code_context` (core constraints/prerequisites summary)
    - `target_file` (primary target if known)
-   - `priority` (`high` or `essential`)
    - `risk_context` (dependency and execution risk summary)
    - `metadata` containing:
      - `objective`
@@ -80,7 +78,7 @@ Guidance:
 
 ## Interactive Execution Loop
 
-1. Pick the earliest `open` id from status file.
+1. Pick the earliest `open` id from status file and resolve its queue item by file order.
 2. Resolve the matching queue item in `/codex/output/iterative_implementation_items.txt`.
 3. Execute only that step.
 4. Run the step validation and update step status:

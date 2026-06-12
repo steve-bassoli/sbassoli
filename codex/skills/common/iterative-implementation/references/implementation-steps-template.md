@@ -8,15 +8,13 @@ Use this structure for entries in:
 [
   {
     "id": "IMP-1",
-    "order": 1,
-    "item_type": "implementation_step",
     "description": "<step title and objective summary>",
+    "complexity": "medium",
     "source_file": "unknown",
     "source_line_start": "unknown",
     "source_line_end": "unknown",
     "code_context": "<constraints, dependencies, prerequisites summary>",
     "target_file": "unknown",
-    "priority": "essential",
     "risk_context": "<execution risks and dependency notes>",
     "metadata": {
       "objective": "<what this step accomplishes>",

@@ -21,7 +21,7 @@ description: Review unresolved feedback iteratively from either a GitHub pull re
 2. For manual mode, sync status file with util script:
    - `powershell -File C:\work\sbassoli\codex\skills\common\util-iterative-flat-file\scripts\sync-iterative-state.ps1 -InvokingSkillName "iterative-github-comments"`
 3. For PR URL mode, stop if the script reports repo mismatch or branch mismatch.
-4. Reconcile queue completeness and ensure each item has `id`, `order`, `item_type`, and `description` with best-effort source/context metadata.
+4. Reconcile queue completeness and ensure each item has `id`, `order`, `item_type`, and `description` with best-effort source/context metadata. When the user asks for comment assessment, also populate the assessment metadata fields described below.
 5. Ask: `Would you like me to start addressing unresolved comments one by one?`
 6. Process one `open` item at a time using `/codex/output/iterative_github_comments_items_status.txt`.
 7. After each item, ask: `Please review this change. Should I process the next unresolved comment?`
@@ -96,6 +96,12 @@ Each item includes:
   - `reference_url`
   - `metadata`
 
+Assessment metadata fields, when requested, live under `metadata`:
+- `change_summary`
+- `over_optimization_likelihood`
+- `overly_cautious_null_empty_checking_likelihood`
+- `assessment_note`
+
 Treat `/codex/output/iterative_github_comments_items_status.txt` as mutable progress source-of-truth.
 
 Status file columns:
@@ -120,7 +126,12 @@ Manual mode entry template:
     "priority": "high",
     "risk_context": "Unresolved PR feedback item",
     "reference_url": "<comment/permalink or n/a>",
-    "metadata": {}
+    "metadata": {
+      "change_summary": "",
+      "over_optimization_likelihood": "",
+      "overly_cautious_null_empty_checking_likelihood": "",
+      "assessment_note": ""
+    }
   }
 ]
 ```
@@ -133,7 +144,7 @@ The script:
 - Parses and validates the PR URL.
 - Verifies local repo/branch alignment with the PR.
 - Queries unresolved review threads from GitHub.
-- Writes a util-compatible JSON queue at `/codex/output/iterative_github_comments_items.txt`.
+- Writes a util-compatible JSON queue at `/codex/output/iterative_github_comments_items.txt`, including blank assessment metadata placeholders for later enrichment.
 - Syncs `/codex/output/iterative_github_comments_items_status.txt` via util-iterative-flat-file by default.
 
 For manual mode, create or update `/codex/output/iterative_github_comments_items.txt` directly from user-provided comments using the queue format above, then run the util sync script.

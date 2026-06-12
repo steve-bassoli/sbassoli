@@ -142,8 +142,9 @@ function Get-QueueItems {
     }
 
     $order = $index
-    if ($null -ne $item.order -and ([string]$item.order) -match "^-?\d+$") {
-      $order = [int]$item.order
+    $orderProperty = $item.PSObject.Properties["order"]
+    if ($null -ne $orderProperty -and $null -ne $orderProperty.Value -and ([string]$orderProperty.Value) -match "^-?\d+$") {
+      $order = [int]$orderProperty.Value
     }
 
     $normalized.Add([pscustomobject]@{
