@@ -1,0 +1,4 @@
+interface:
+  display_name: "Populate Workflows Access Control"
+  short_description: "Seed local access-control DB with Workflows permissions."
+  default_prompt: "Populate the local access-control database with Workflows permissions from dsbu-workflows."
