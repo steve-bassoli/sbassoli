@@ -23,6 +23,16 @@ Never select a stale, missing, or unregenerated BOM-to-Confluence artifact as th
 4. For cross-file behavior, migrations, larger diffs, local comparisons, or executable validation, reuse an exact local checkout read-only or create an ephemeral shallow partial checkout containing the base and head. Do not switch the user's branch. Fetch more history only when the merge base, blame, or a legacy contract requires it.
 5. Remember that repository bytes on disk do not consume model context; command output does. Prefer `git diff --stat`, `--name-status`, narrow file diffs, `rg`, line slices, and quiet targeted tests. Never print an entire large diff or repository into context.
 
+## Temporary checkout lifecycle
+
+When a disposable clone or worktree is necessary:
+
+1. Create it directly under the operating system's temporary directory with a unique `one-comment-<repo>-<random>` name. Record and announce its resolved absolute path.
+2. Treat that directory as the only cleanup target. Never clean a reused checkout, shared Git storage, the temporary-directory root, user-level build or dependency caches, or any path not created by the current execution.
+3. Keep generated files, build outputs, and logs beneath the recorded directory where tooling permits. Complete the reproduction and defense challenge before cleanup.
+4. In a guaranteed finalization step, resolve the target again and verify it is the exact recorded path, is a child of the operating system's temporary directory, and is not a workspace, repository, home, or temporary-directory root. Remove a registered worktree with the owning repository's worktree command and prune it; recursively remove a standalone clone only after the same checks.
+5. Verify that the path no longer exists. If cleanup fails, leave it in place and report the exact path and error; never broaden the deletion target. Report `Cleanup: not needed` when no disposable checkout was created.
+
 ## Review workflow
 
 1. Read the PR description and classify its intended behavior, explicit temporary limitations, and compatibility promises.
@@ -95,6 +105,8 @@ When the defense gate concedes, return only:
 
 **Defense gate:** `CONCEDE` — [one-sentence reason]
 
+**Cleanup:** [removed `<temporary checkout>` | not needed | failed for `<path>`: `<error>`]
+
 Nothing was posted.
 ```
 
@@ -108,6 +120,8 @@ When no candidate survives, return:
 No substantiated high-value comment found.
 
 **Defense gate:** `BLOCK` or `INCOMPLETE` — [strongest unresolved objection or missing evidence]
+
+**Cleanup:** [removed `<temporary checkout>` | not needed | failed for `<path>`: `<error>`]
 
 Nothing was posted.
 ```
