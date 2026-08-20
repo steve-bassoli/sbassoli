@@ -10,7 +10,7 @@ description: Build and execute a lightweight unit-test plan from current local c
 1. Diff local changes against `HEAD` and list changed files.
 2. Filter to behavior-impacting source changes.
 3. Estimate high-value missing test coverage.
-4. Build a small, risk-prioritized backlog.
+4. Build a small, risk-prioritized backlog with one queue item per unit test method/behavior.
 5. Write `Essential` items to `/codex/output/iterative_unit_tests_items.txt` using util queue schema, including `estimated_line_coverage` for every item.
 6. Read `/codex/output/iterative_unit_tests_items.txt` back and verify it is valid JSON using the same util queue schema.
 7. Sync status for the queue:
@@ -61,15 +61,19 @@ description: Build and execute a lightweight unit-test plan from current local c
 
 1. Build `Essential` + `Optional/Deferred` candidates.
 2. Keep `Essential` intentionally small (1-5 by default).
-3. Write/refresh `/codex/output/iterative_unit_tests_items.txt` with initial `Essential` items only.
-4. Use util queue schema per item.
-5. Required fields:
+3. Break backlog candidates down so each queue item represents exactly one unit test method or one narrow test behavior.
+   - Do not group several test methods under one item, even when they target the same class.
+   - Prefer item descriptions in the form `Add shouldDoSpecificBehavior`.
+   - If a helper/class needs four tests, create four queue items.
+4. Write/refresh `/codex/output/iterative_unit_tests_items.txt` with initial `Essential` items only.
+5. Use util queue schema per item.
+6. Required fields:
    - `id`
    - `order`
    - `item_type` (`unit_test`)
    - `description` (behavior to cover)
    - `estimated_line_coverage`
-6. Recommended fields:
+7. Recommended fields:
    - `source_file`
    - `source_line_start`
    - `source_line_end`
@@ -78,11 +82,12 @@ description: Build and execute a lightweight unit-test plan from current local c
    - `priority` (`essential`)
    - `risk_context`
    - `metadata` (extra branch/range details)
-7. Set `estimated_line_coverage` to a concise numeric estimate or bounded range for how many changed source lines the proposed test meaningfully covers.
-8. If exact lines are unavailable, use best-known markers:
+8. In `metadata`, include `test_method` with the proposed test method name when the target framework uses named test methods.
+9. Set `estimated_line_coverage` to a concise numeric estimate or bounded range for how many changed source lines the proposed test meaningfully covers.
+10. If exact lines are unavailable, use best-known markers:
    - `source_line_start: "new"` for new blocks
    - `"unknown"` only when unavoidable; include reason in `risk_context`
-9. If there are no `Essential` items, write an empty array (`[]`).
+11. If there are no `Essential` items, write an empty array (`[]`).
 
 ## Step 4: Validate and Sync Queue
 
@@ -124,10 +129,11 @@ Do not implement tests before approval.
 ## Output Contract
 
 1. Always write `/codex/output/iterative_unit_tests_items.txt` before coding tests.
-2. Always include `estimated_line_coverage` on every queue item.
-3. Always request approval between items.
-4. Always include line ranges and function or branch context in queue entries.
-5. Keep `/codex/output/iterative_unit_tests_items.txt` as the implementation intake source-of-truth.
-6. Keep `/codex/output/iterative_unit_tests_items_status.txt` as mutable status source-of-truth.
-7. End with completion summary:
+2. Always create one queue item per unit test method or narrow test behavior; never group multiple test methods into one queue item.
+3. Always include `estimated_line_coverage` on every queue item.
+4. Always request approval between items.
+5. Always include line ranges and function or branch context in queue entries.
+6. Keep `/codex/output/iterative_unit_tests_items.txt` as the implementation intake source-of-truth.
+7. Keep `/codex/output/iterative_unit_tests_items_status.txt` as mutable status source-of-truth.
+8. End with completion summary:
    - total, completed, skipped, blocked, remaining open (+ reasons)

@@ -15,6 +15,7 @@ Custom skills are discovered from these path patterns. Do not mirror individual 
 - `C:/work/sbassoli/codex/skills/local/dsbu-access-control-service/*/SKILL.md`
 - `C:/work/sbassoli/codex/skills/java/*/SKILL.md`
 - `C:/work/sbassoli/codex/skills/common/*/SKILL.md`
+- `C:/work/sbassoli/codex/skills/other/*/SKILL.md`
 
 ### System skills
 

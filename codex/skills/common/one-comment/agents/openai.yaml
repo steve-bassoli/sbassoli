@@ -1,0 +1,4 @@
+interface:
+  display_name: "One Comment"
+  short_description: "Find one defensible, high-value PR defect"
+  default_prompt: "Use $one-comment to find one defensible, high-value defect in this PR and draft an inline comment."
